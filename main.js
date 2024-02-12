@@ -4,7 +4,7 @@ const horses = document.querySelector('.horse');
 const image = document.querySelectorAll('.img');
 
 const speedRange = document.querySelector('#speed');
-const speedRangeValueText = document.querySelector('#speedRangeText');
+let speedRangeValueText = document.querySelector('#speedRangeText');
 
 const frameOne = document.querySelector('.frame_01');
 const frameTwo = document.querySelector('.frame_02');
@@ -22,19 +22,27 @@ const frameTwelve = document.querySelector('.frame_12');
 const frameThirteen = document.querySelector('.frame_13');
 
 
-let speed = 0;
-
 let counter = 0;
 
-speedRange.addEventListener('input', () => {
-    speedRangeValueText.innerText = `${speedRange.value}`;
-    console.log("Speed: ", speedRange.value)
+let speed = 100;
+let animationInterval;
+
+
+speedRange.addEventListener('input', (event) => {
+
+    speedRangeValueText.innerText = `${event.target.value}`;
+
+    clearInterval(animationInterval);
+    speed = Number(event.target.value);
+    /* ::: set a new interval with the actual speed (range input ) :: */
+    animationInterval = setInterval(() => {
+        updateAnimationFrame();
+    }, speed);
+
 });
 
-speed = speedRange.value;
 
-
-setInterval(() => {
+function updateAnimationFrame() {
 
     counter++
 
@@ -45,58 +53,62 @@ setInterval(() => {
 
     switch (counter) {
 
-        case counter = 1: frameOne.classList.add('showHorse')
+        case 1: frameOne.classList.add('showHorse')
             frameTwelve.classList.remove('showHorse');
             break;
 
-        case counter = 2: frameTwo.classList.add('showHorse')
+        case 2: frameTwo.classList.add('showHorse')
             frameOne.classList.remove('showHorse');
             break;
 
-        case counter = 3: frameThree.classList.add('showHorse')
+        case 3: frameThree.classList.add('showHorse')
             frameTwo.classList.remove('showHorse');
             break;
 
-        case counter = 4: frameFour.classList.add('showHorse')
+        case 4: frameFour.classList.add('showHorse')
             frameThree.classList.remove('showHorse');
             break;
 
-        case counter = 5: frameFive.classList.add('showHorse');
+        case 5: frameFive.classList.add('showHorse');
             frameFour.classList.remove('showHorse');
             break;
 
-        case counter = 6: frameSix.classList.add('showHorse');
+        case 6: frameSix.classList.add('showHorse');
             frameFive.classList.remove('showHorse');
             break;
-        case counter = 7: frameSeven.classList.add('showHorse');
+
+        case 7: frameSeven.classList.add('showHorse');
             frameSix.classList.remove('showHorse');
             break;
 
-        case counter = 8: frameEight.classList.add('showHorse');
+        case 8: frameEight.classList.add('showHorse');
             frameSeven.classList.remove('showHorse');
             break;
 
-        case counter = 9: frameNine.classList.add('showHorse');
+        case 9: frameNine.classList.add('showHorse');
             frameEight.classList.remove('showHorse');
             break;
 
-        case counter = 10: frameTen.classList.add('showHorse');
+        case 10: frameTen.classList.add('showHorse');
             frameNine.classList.remove('showHorse');
             break;
 
-        case counter = 11: frameEleven.classList.add('showHorse');
+        case 11: frameEleven.classList.add('showHorse');
             frameTen.classList.remove('showHorse');
             break;
 
-        case counter = 12: frameTwelve.classList.add('showHorse');
+        case 12: frameTwelve.classList.add('showHorse');
             frameEleven.classList.remove('showHorse');
             break;
 
-        case counter = 12: frameThirteen.classList.add('showHorse');
+        case 13: frameThirteen.classList.add('showHorse');
             frameTwelve.classList.remove('showHorse');
             break;
     }
+};
 
-    console.log(counter);
 
+/* :::: start the animation initially :::: */
+animationInterval = setInterval(() => {
+    updateAnimationFrame();
 }, speed);

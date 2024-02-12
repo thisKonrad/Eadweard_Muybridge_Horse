@@ -3,6 +3,9 @@
 const horses = document.querySelector('.horse');
 const image = document.querySelectorAll('.img');
 
+const speedRange = document.querySelector('#speed');
+const speedRangeValueText = document.querySelector('#speedRangeText');
+
 const frameOne = document.querySelector('.frame_01');
 const frameTwo = document.querySelector('.frame_02');
 const frameThree = document.querySelector('.frame_03');
@@ -19,9 +22,17 @@ const frameTwelve = document.querySelector('.frame_12');
 const frameThirteen = document.querySelector('.frame_13');
 
 
-let speed = 100;
+let speed = 0;
 
 let counter = 0;
+
+speedRange.addEventListener('input', () => {
+    speedRangeValueText.innerText = `${speedRange.value}`;
+    console.log("Speed: ", speedRange.value)
+});
+
+speed = speedRange.value;
+
 
 setInterval(() => {
 

@@ -9,7 +9,7 @@ between 1878 and 1886, which used multiple cameras to capture the different posi
 
 For me this early development of sequential photo series owns a lot of magic.
 Its like a little sketch for all what follows after this, 
-scientific photography cinemathography and animation.
+scientific photography, cinemathography and animation.
 
 
 In the original Sequence there is a rider on the horse.

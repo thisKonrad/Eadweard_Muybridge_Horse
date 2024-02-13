@@ -15,4 +15,4 @@ scientific photography cinemathography and animation.
 In the original Sequence there is a rider on the horse.
 I prefered the horse without a human being on his back.
 
-its wild free ... its running ... hi haa!
+its wild ...its free ... its running ... hey ho silver!
